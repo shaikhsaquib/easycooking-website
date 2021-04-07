@@ -15,7 +15,7 @@ def service1(request):
 def service2(request):
     if request.method == 'POST':
         search= request.POST.get('talash')
-        search=recipie.objects.filter(TranslatedIngredients__icontains=search)
+        search=recipie.objects.filter(Ingredients__icontains=search)
         return render(request, 'service2.html',{'re':search})
     else:
         return render(request,'service2.html')
