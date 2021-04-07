@@ -1,0 +1,95 @@
+{% load static %}
+
+<html>
+	<head>
+		<title>Services</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="{% static 'C:\Users\KHAN NISAR NASEER\Desktop\project2\protwo\static\service1.css' %}">
+		
+	</head>
+	<body>
+	<div id="main">
+		<h1>Service 1</h1>
+
+		
+<hr>		
+		<p>
+			In this section you can search for the dishes you want. In the<br>
+			search bar, just enter the name of the dish which you wish to<br>
+			prepare and our system will generate the most easiest and<br>
+			accurate way to prepare that particular dish for you.
+			
+		</p>
+		<div class="box">
+		<!-- <nav class="navbar navbar-light bg-light"> -->
+			<form method="POST" action="/service1" >
+				{% csrf_token %}
+				{{ form }}
+			  <input  name="talash"  type="search" placeholder="inter the dish which you wantto see" aria-label="Search">
+			  <button class="btn btn-outline-success " type="submit">Search</button>
+			</form>
+		  <!-- </nav> -->
+		</div>
+		
+
+
+
+	<!-- {% for r in re %}
+		{{e.RecipeName}}
+		{{e.TranslatedRecipeName}}
+		{{e.Ingredients}}
+		{{e.TranslatedIngredients}
+		{{e.PrepTimeInMins}}
+		{{e.CookTimeInMins}}
+		{{e.TotalTimeInMins}}
+		{{e.Cuisine}}
+		{{e.Course}
+		{{e.Diet}
+		{{e.Instructions}
+
+		{{e. TranslatedInstructions}
+		{{e.URL}
+	{% endfor %} -->
+	</div>
+	<table class="table table-bordered " >
+			
+		<tr class="table-primary">
+		   <td>srno</td>
+		   <th>RecipeName</th>
+		   <!-- <th>TranslatedRecipeName</th> -->
+		   <th>Ingredients</th>
+		   <th>TranslatedIngredients</th>
+		   <th>PrepTimeInMins</th>
+		   <th>CookTimeInMins</th>
+		   <th>TotalTimeInMins</th>
+		   <th>Cuisine</th>
+		   <!-- <th>sering</th> -->
+		   <th>Course</th>
+		   <th>Diet</th>
+		   <th>Instructions</th>
+		   <!-- <th>TranslatedInstructions</th> -->
+		   <th>URL</th>
+	   </tr>
+   {% for r in re %}
+	   <tr class="table-primary">
+		   <td>{{r.id}}</td>
+		   <td>{{r.RecipeName}}</td>
+		   <!-- <td>{{r.TranslatedRecipeName}}</td> -->
+		   <td>{{r.Ingredients}}</td>
+		   <td>{{r.TranslatedIngredients}}</td>
+		   <td>{{r.PrepTimeInMins}}</td>
+		   <td>{{r.CookTimeInMins}}</td>
+		   <td>{{r.TotalTimeInMins}}</td>
+		   <td>{{r.Cuisine}}</td>
+		   <!-- <td>{{r.serving}}</td> -->
+		   <td>{{r.Course}}</td>
+		   <td>{{r.Diet}}</td>
+		   <td>{{r.Instructions}}</td>
+		   <!-- <td>{{r.TranslatedInstructions}}</td> -->
+		   <td>{{r.URL}}</td>
+	   </tr>
+   {% endfor %}
+   </table>
+   
+	</body>
+</html>
